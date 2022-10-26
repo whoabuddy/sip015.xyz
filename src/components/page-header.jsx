@@ -1,10 +1,9 @@
-import { Box, Button, HStack, Link, useColorModeValue } from '@chakra-ui/react';
-import { useAuth, useCurrentStxAddress } from '@micro-stacks/react';
+import { Avatar, Box, HStack, Link, useColorModeValue } from '@chakra-ui/react';
 import { ThemeToggle } from './theme-toggle';
+import { WalletConnectButton } from './wallet-connect-button';
+import StacksNexus from '../assets/stacks-nexus.svg';
 
 export const PageHeader = () => {
-  const { signOut } = useAuth();
-  const address = useCurrentStxAddress();
   return (
     <Box
       bg={useColorModeValue('white', 'neutralD.100')}
@@ -22,17 +21,14 @@ export const PageHeader = () => {
         px={4}
       >
         <Link href="/">
-          <p>SIP-015 Vote</p>
+          <Avatar
+            name="Stacks SIP-015"
+            size="sm"
+            src={StacksNexus}
+            cursor="pointer"
+          />
         </Link>
-        {address && (
-          <Button
-            variant="unstyled"
-            fontSize="sm"
-            onClick={() => void signOut()}
-          >
-            {`${address.substring(0, 5)}...${address.substring(address.length - 5)}`}
-          </Button>
-        )}
+        <WalletConnectButton />
         <ThemeToggle />
       </HStack>
     </Box>

@@ -1,22 +1,16 @@
 import reactLogo from './assets/react.svg';
 import * as MicroStacks from '@micro-stacks/react';
-import { ChakraProvider, Container } from '@chakra-ui/react';
-import { WalletConnectButton } from './components/wallet-connect-button.jsx';
-import { UserCard } from './components/user-card.jsx';
-import { NetworkToggle } from './components/network-toggle.jsx';
+import { ChakraProvider } from '@chakra-ui/react';
 import { PageHeader } from './components/page-header';
+import { PageBody } from './components/page-body';
+import { PageFooter } from './components/page-footer';
 
 function Contents() {
   return (
     <>
       <PageHeader />
-      <Container>
-        <h1>SIP-015 Voting Website</h1>
-        <div>
-          <UserCard />
-          <WalletConnectButton />
-        </div>
-      </Container>
+      <PageBody />
+      <PageFooter />
     </>
   );
 }
