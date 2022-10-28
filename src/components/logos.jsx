@@ -1,4 +1,4 @@
-import { Icon, useColorMode, useColorModeValue } from '@chakra-ui/react';
+import { Icon, useColorModeValue } from '@chakra-ui/react';
 
 export const Stacks = props => {
   return (

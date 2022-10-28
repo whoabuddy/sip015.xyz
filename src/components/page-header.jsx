@@ -1,7 +1,6 @@
-import { Avatar, Box, HStack, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, HStack, Link, useColorModeValue } from '@chakra-ui/react';
 import { ThemeToggle } from './theme-toggle';
 import { WalletConnectButton } from './wallet-connect-button';
-import StacksNexus from '../assets/stacks-nexus.svg';
 import { Stacks, stacksColor } from './logos';
 
 export const PageHeader = () => {
