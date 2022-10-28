@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
+import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
 
 export const PageBody = () => {
   return (
@@ -119,7 +120,12 @@ const VoteMethodOne = () => {
         pb="5"
         size="md"
       >
-        Method 1: Stacking Solo
+        Method 1: Stacking Solo{' '}
+        <Bitcoin
+          boxSize={8}
+          color={bitcoinColor}
+          ms="2px"
+        />
       </Heading>
       <Text pb="5">
         To vote, you'll need to send a Bitcoin transaction using the key(s) to your PoX reward
@@ -176,7 +182,12 @@ const VoteMethodTwo = () => {
         pb="5"
         size="md"
       >
-        Method 2: Stacking in a Pool
+        Method 2: Stacking in a Pool{' '}
+        <Stacks
+          boxSize={8}
+          color={stacksColor}
+          ms="2px"
+        />
       </Heading>
       <Text pb="5">
         To vote, you'll need to send a Stacks transaction using the key(s) to your Stacking address.

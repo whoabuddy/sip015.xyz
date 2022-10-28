@@ -1,4 +1,3 @@
-import reactLogo from './assets/react.svg';
 import * as MicroStacks from '@micro-stacks/react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { PageHeader } from './components/page-header';
@@ -18,8 +17,8 @@ function Contents() {
 export default function App() {
   return (
     <MicroStacks.ClientProvider
-      appName={'SIP-015'}
-      appIconUrl={reactLogo}
+      appName="Vote on SIP-015"
+      appIconUrl="https://sip015.xyz/vote-on-sip015.png"
     >
       <ChakraProvider>
         <Contents />
