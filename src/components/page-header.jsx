@@ -2,6 +2,7 @@ import { Avatar, Box, HStack, Link, useColorModeValue } from '@chakra-ui/react';
 import { ThemeToggle } from './theme-toggle';
 import { WalletConnectButton } from './wallet-connect-button';
 import StacksNexus from '../assets/stacks-nexus.svg';
+import { Stacks, stacksColor } from './logos';
 
 export const PageHeader = () => {
   return (
@@ -21,11 +22,10 @@ export const PageHeader = () => {
         px={4}
       >
         <Link href="/">
-          <Avatar
-            name="Stacks SIP-015"
-            size="sm"
-            src={StacksNexus}
-            cursor="pointer"
+          <Stacks
+            boxSize={8}
+            color={stacksColor}
+            ms="2px"
           />
         </Link>
         <WalletConnectButton />

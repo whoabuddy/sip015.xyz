@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
-import { Bitcoin, Stacks } from './logos';
+import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
 
 export const PageBody = () => {
   return (
@@ -123,7 +123,7 @@ const VoteMethodOne = () => {
         Method 1: Stacking Solo{' '}
         <Bitcoin
           boxSize={8}
-          color="#F2A900"
+          color={bitcoinColor}
           ms="2px"
         />
       </Heading>
@@ -185,7 +185,7 @@ const VoteMethodTwo = () => {
         Method 2: Stacking in a Pool{' '}
         <Stacks
           boxSize={8}
-          color="blue"
+          color={stacksColor}
           ms="2px"
         />
       </Heading>

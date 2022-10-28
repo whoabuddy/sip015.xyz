@@ -16,6 +16,8 @@ export const Stacks = props => {
   );
 };
 
+export const stacksColor = '#5546FF';
+
 export const Github = props => {
   return (
     <Icon
@@ -67,3 +69,5 @@ export const Bitcoin = props => {
     </Icon>
   );
 };
+
+export const bitcoinColor = '#F2A900';
