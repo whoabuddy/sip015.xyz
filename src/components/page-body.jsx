@@ -6,7 +6,6 @@ import {
   Container,
   Divider,
   Heading,
-  Icon,
   Link,
   ListItem,
   OrderedList,
