@@ -6,6 +6,7 @@ import {
   Container,
   Divider,
   Heading,
+  Icon,
   Link,
   ListItem,
   OrderedList,
@@ -94,21 +95,12 @@ const VoteSection = () => {
         <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
         vote period, the vote will be discarded.
       </Alert>
-      <Text pb="5">
-        If the user is not Stacking, then they can still vote with their liquid STX using the{' '}
-        <Link
-          color={useColorModeValue('blue.600', 'blue.200')}
-          href="https://stx.eco/sip/twopointone"
-          isExternal
-        >
-          Ecosystem DAO
-        </Link>
-        . Please see the link for more information.
-      </Text>
       <Divider mb="5" />
       <VoteMethodOne />
       <Divider mb="5" />
       <VoteMethodTwo />
+      <Divider mb="5" />
+      <VoteMethodThree />
     </Box>
   );
 };
@@ -217,6 +209,35 @@ const VoteMethodTwo = () => {
         </ListItem>
       </UnorderedList>
       <VoteButtons />
+    </>
+  );
+};
+
+const VoteMethodThree = () => {
+  return (
+    <>
+      <Heading
+        pb="5"
+        size="md"
+      >
+        Method 3: Liquid STX Balance{' '}
+        <Stacks
+          boxSize={8}
+          color={stacksColor}
+          ms="2px"
+        />
+      </Heading>
+      <Text pb="5">
+        To vote, you'll need to access{' '}
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          href="https://stx.eco/sip/twopointone"
+          isExternal
+        >
+          the Ecosystem DAO website
+        </Link>{' '}
+        and vote through the DAO proposal.
+      </Text>
     </>
   );
 };

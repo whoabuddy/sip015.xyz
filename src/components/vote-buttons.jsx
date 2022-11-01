@@ -1,5 +1,6 @@
 import {
   Button,
+  Center,
   Popover,
   PopoverArrow,
   PopoverBody,
@@ -7,6 +8,7 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
+  Skeleton,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -19,7 +21,7 @@ export const VoteButtons = () => {
   if (!isSignedIn) return null;
 
   return (
-    <>
+    <Center pb="5">
       <Text
         as="b"
         me="5"
@@ -70,6 +72,6 @@ export const VoteButtons = () => {
           </PopoverBody>
         </PopoverContent>
       </Popover>
-    </>
+    </Center>
   );
 };
