@@ -9,6 +9,7 @@ import {
   Link,
   ListItem,
   OrderedList,
+  Stack,
   Text,
   UnorderedList,
   useColorModeValue,
@@ -94,11 +95,11 @@ const VoteSection = () => {
         <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
         vote period, the vote will be discarded.
       </Alert>
-      <Divider mb="5" />
+      <Divider my="5" />
       <VoteMethodOne />
-      <Divider mb="5" />
+      <Divider my="5" />
       <VoteMethodTwo />
-      <Divider mb="5" />
+      <Divider my="5" />
       <VoteMethodThree />
     </Box>
   );
@@ -107,17 +108,17 @@ const VoteSection = () => {
 const VoteMethodOne = () => {
   return (
     <>
-      <Heading
+      <Stack
+        direction={['column-reverse', 'row']}
         pb="5"
-        size="md"
       >
-        Method 1: Stacking Solo{' '}
+        <Heading size="md">Method 1: Stacking Solo </Heading>
         <Bitcoin
           boxSize={8}
           color={bitcoinColor}
           ms="2px"
         />
-      </Heading>
+      </Stack>
       <Text pb="5">
         To vote, you'll need to send a Bitcoin transaction using the key(s) to your PoX reward
         address.
@@ -169,17 +170,18 @@ const VoteMethodOne = () => {
 const VoteMethodTwo = () => {
   return (
     <>
-      <Heading
+      <Stack
+        direction={['column-reverse', 'row']}
         pb="5"
-        size="md"
       >
-        Method 2: Stacking in a Pool{' '}
+        <Heading size="md">Method 2: Stacking in a Pool </Heading>
         <Stacks
           boxSize={8}
           color={stacksColor}
           ms="2px"
         />
-      </Heading>
+      </Stack>
+
       <Text pb="5">
         To vote, you'll need to send a Stacks transaction using the key(s) to your Stacking address.
       </Text>
@@ -215,17 +217,23 @@ const VoteMethodTwo = () => {
 const VoteMethodThree = () => {
   return (
     <>
-      <Heading
+      <Stack
+        direction={['column-reverse', 'row']}
         pb="5"
-        size="md"
       >
-        Method 3: Liquid STX Balance{' '}
+        <Heading
+          pb="5"
+          size="md"
+        >
+          Method 3: Liquid STX Balance{' '}
+        </Heading>
         <Stacks
           boxSize={8}
           color={stacksColor}
           ms="2px"
         />
-      </Heading>
+      </Stack>
+
       <Text pb="5">
         To vote, you'll need to access{' '}
         <Link
