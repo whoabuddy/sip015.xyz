@@ -15,7 +15,7 @@ export const PageHeader = () => {
       shadow="0 0 10px 0 rgba(0,0,0, 0.035);"
     >
       <HStack
-        justify="space-between"
+        justifyContent="space-between"
         w="100%"
         h={16}
         px={4}

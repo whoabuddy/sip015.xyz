@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
 
@@ -42,7 +42,10 @@ export const VoteButtons = () => {
       borderRadius="xl"
       p="5"
     >
-      <HStack justifyContent="space-evenly">
+      <Stack
+        direction={['column', 'row']}
+        justifyContent="space-evenly"
+      >
         <Text
           as="b"
           me="5"
@@ -81,7 +84,7 @@ export const VoteButtons = () => {
             </Button>
           </>
         )}
-      </HStack>
+      </Stack>
     </Box>
   );
 };
