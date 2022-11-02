@@ -49,6 +49,7 @@ export const VoteButtons = () => {
         <Text
           as="b"
           me="5"
+          alignSelf="center"
         >
           Logged in as {`${address.substring(0, 5)}...${address.substring(address.length - 5)}`}
         </Text>
