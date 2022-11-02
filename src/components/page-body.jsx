@@ -10,6 +10,7 @@ import {
   ListItem,
   OrderedList,
   Stack,
+  StackDivider,
   Text,
   UnorderedList,
   useColorModeValue,
@@ -68,14 +69,38 @@ const AboutSection = () => {
           acceptable to the Stacks blockchain.
         </ListItem>
       </OrderedList>
-      <Link
-        color={useColorModeValue('blue.600', 'blue.200')}
-        fontSize="1.5em"
-        href="https://github.com/stacksgov/sips/blob/feat/sip-015/sips/sip-015/sip-015-network-upgrade.md"
-        isExternal
+      <Stack
+        direction={['column', null, 'row']}
+        justifyContent="space-evenly"
+        divider={<StackDivider borderColor={useColorModeValue('gray.300', 'gray.500')} />}
       >
-        Read more about SIP-015 <ExternalLinkIcon mx="2px" />
-      </Link>
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          fontSize="1.25em"
+          href="https://github.com/stacksgov/sips/blob/feat/sip-015/sips/sip-015/sip-015-network-upgrade.md"
+          isExternal
+        >
+          SIP-015 on GitHub <ExternalLinkIcon mx="2px" />
+        </Link>
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          fontSize="1.25em"
+          title="Stacks 2.1: Strengthening The Connection to Bitcoin"
+          href="https://stacks.org/stacks-21-what-to-expect"
+          isExternal
+        >
+          Stacks Foundation Blog <ExternalLinkIcon mx="2px" />
+        </Link>
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          fontSize="1.25em"
+          title="A Developer's Guide to Stacks 2.1"
+          href="https://www.hiro.so/blog/a-developers-guide-to-stacks-2-1"
+          isExternal
+        >
+          Hiro Blog <ExternalLinkIcon mx="2px" />
+        </Link>
+      </Stack>
     </Box>
   );
 };
