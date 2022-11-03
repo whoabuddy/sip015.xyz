@@ -41,6 +41,7 @@ export const VoteButtons = () => {
       bg={useColorModeValue('gray.100', 'gray.700')}
       borderRadius="xl"
       p="5"
+      mb="5"
     >
       <Stack
         direction={['column', 'row']}

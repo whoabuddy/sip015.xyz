@@ -110,15 +110,26 @@ const VoteSection = () => {
     <Box p="10">
       <Heading pb="5">How to Vote</Heading>
       <Text pb="5">
-        If a user is Stacking, then their STX can be used to vote in one of two ways, depending on
-        whether or not they are solo-stacking or stacking through a delegate.
+        If a user is stacking, then their STX can be used to vote through Method 1 if stacking solo
+        or Method 2 if stacking in a pool.
+      </Text>
+      <Text pb="5">
+        If a user is not Stacking, then their STX can be used to vote using Method 3 through{' '}
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          href="https://stx.eco/sip/twopointone"
+          isExternal
+        >
+          the Ecosystem DAO website
+        </Link>
+        .
       </Text>
       <Alert
         mb="5"
-        status="warning"
+        status="info"
       >
-        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
-        vote period, the vote will be discarded.
+        <AlertIcon /> Voting will take place during reward cycles 46 and 47. This window is
+        estimated to begin starting November 10, 2022 and ending December 8, 2022.
       </Alert>
       <Divider my="5" />
       <VoteMethodOne />
@@ -188,6 +199,13 @@ const VoteMethodOne = () => {
           .
         </ListItem>
       </UnorderedList>
+      <Alert
+        mb="5"
+        status="warning"
+      >
+        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
+        vote period using this method, the vote will be discarded.
+      </Alert>
     </>
   );
 };
@@ -235,6 +253,13 @@ const VoteMethodTwo = () => {
         </ListItem>
       </UnorderedList>
       <VoteButtons />
+      <Alert
+        mb="5"
+        status="warning"
+      >
+        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
+        vote period using this method, the vote will be discarded.
+      </Alert>
     </>
   );
 };
