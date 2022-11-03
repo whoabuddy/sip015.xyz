@@ -73,7 +73,7 @@ export const VoteButtons = () => {
               isLoading={isRequestPending ? true : false}
               onClick={voteYes}
             >
-              Vote Yes
+              YES ON 2.1
             </Button>
             <Button
               mx="5"
@@ -81,7 +81,7 @@ export const VoteButtons = () => {
               isLoading={isRequestPending ? true : false}
               onClick={voteNo}
             >
-              Vote No
+              NO ON 2.1
             </Button>
           </>
         )}
