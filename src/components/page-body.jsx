@@ -110,11 +110,12 @@ const VoteSection = () => {
     <Box p="10">
       <Heading pb="5">How to Vote</Heading>
       <Text pb="5">
-        If a user is stacking, then their STX can be used to vote through Method 1 if stacking solo
-        or Method 2 if stacking in a pool.
+        If a user is Stacking, then their STX can be used to vote through Method 1 if Stacking solo
+        or Method 2 if Stacking in a pool.
       </Text>
       <Text pb="5">
-        If a user is not Stacking, then their STX can be used to vote using Method 3 through{' '}
+        If a user is Stacking through an exchange or not Stacking at all, then their STX can be used
+        to vote using Method 3 through{' '}
         <Link
           color={useColorModeValue('blue.600', 'blue.200')}
           href="https://stx.eco/sip/twopointone"
@@ -161,7 +162,7 @@ const VoteMethodOne = () => {
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
-          <Text as="b">To vote Yes</Text>, send a{' '}
+          <Text as="b">To vote Yes on 2.1</Text>, send a{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
@@ -180,7 +181,7 @@ const VoteMethodOne = () => {
           .
         </ListItem>
         <ListItem>
-          <Text as="b">To vote No</Text>, send a{' '}
+          <Text as="b">To vote No on 2.1</Text>, send a{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
@@ -230,7 +231,8 @@ const VoteMethodTwo = () => {
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
-          <Text as="b">To vote Yes</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of STX to{' '}
+          <Text as="b">To vote Yes on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
+          STX to{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://explorer.stacks.co/address/SP00000000000003SCNSJTCHE66N2PXHX"
@@ -241,7 +243,8 @@ const VoteMethodTwo = () => {
           .
         </ListItem>
         <ListItem>
-          <Text as="b">To vote No</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of STX to{' '}
+          <Text as="b">To vote No on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
+          STX to{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://explorer.stacks.co/address/SP00000000000000DSQJTCHE66XE1NHQ"
