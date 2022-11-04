@@ -41,6 +41,7 @@ export const VoteButtons = () => {
       bg={useColorModeValue('gray.100', 'gray.700')}
       borderRadius="xl"
       p="5"
+      mb="5"
     >
       <Stack
         direction={['column', 'row']}
@@ -73,7 +74,7 @@ export const VoteButtons = () => {
               isLoading={isRequestPending ? true : false}
               onClick={voteYes}
             >
-              Vote Yes
+              YES ON 2.1
             </Button>
             <Button
               mx="5"
@@ -81,7 +82,7 @@ export const VoteButtons = () => {
               isLoading={isRequestPending ? true : false}
               onClick={voteNo}
             >
-              Vote No
+              NO ON 2.1
             </Button>
           </>
         )}

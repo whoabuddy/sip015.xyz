@@ -110,15 +110,27 @@ const VoteSection = () => {
     <Box p="10">
       <Heading pb="5">How to Vote</Heading>
       <Text pb="5">
-        If a user is Stacking, then their STX can be used to vote in one of two ways, depending on
-        whether or not they are solo-stacking or stacking through a delegate.
+        If a user is Stacking, then their STX can be used to vote through Method 1 if Stacking solo
+        or Method 2 if Stacking in a pool.
+      </Text>
+      <Text pb="5">
+        If a user is Stacking through an exchange or not Stacking at all, then their STX can be used
+        to vote using Method 3 through{' '}
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          href="https://stx.eco/sip/twopointone"
+          isExternal
+        >
+          the Ecosystem DAO website
+        </Link>
+        .
       </Text>
       <Alert
         mb="5"
-        status="warning"
+        status="info"
       >
-        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
-        vote period, the vote will be discarded.
+        <AlertIcon /> Voting will take place during reward cycles 46 and 47. This window is
+        estimated to begin starting November 10, 2022 and ending December 8, 2022.
       </Alert>
       <Divider my="5" />
       <VoteMethodOne />
@@ -150,7 +162,7 @@ const VoteMethodOne = () => {
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
-          <Text as="b">To vote Yes</Text>, send a{' '}
+          <Text as="b">To vote Yes on 2.1</Text>, send a{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
@@ -169,7 +181,7 @@ const VoteMethodOne = () => {
           .
         </ListItem>
         <ListItem>
-          <Text as="b">To vote No</Text>, send a{' '}
+          <Text as="b">To vote No on 2.1</Text>, send a{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
@@ -188,6 +200,13 @@ const VoteMethodOne = () => {
           .
         </ListItem>
       </UnorderedList>
+      <Alert
+        mb="5"
+        status="warning"
+      >
+        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
+        vote period using this method, the vote will be discarded.
+      </Alert>
     </>
   );
 };
@@ -212,7 +231,8 @@ const VoteMethodTwo = () => {
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
-          <Text as="b">To vote Yes</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of STX to{' '}
+          <Text as="b">To vote Yes on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
+          STX to{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://explorer.stacks.co/address/SP00000000000003SCNSJTCHE66N2PXHX"
@@ -223,7 +243,8 @@ const VoteMethodTwo = () => {
           .
         </ListItem>
         <ListItem>
-          <Text as="b">To vote No</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of STX to{' '}
+          <Text as="b">To vote No on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
+          STX to{' '}
           <Link
             color={useColorModeValue('blue.600', 'blue.200')}
             href="https://explorer.stacks.co/address/SP00000000000000DSQJTCHE66XE1NHQ"
@@ -235,6 +256,13 @@ const VoteMethodTwo = () => {
         </ListItem>
       </UnorderedList>
       <VoteButtons />
+      <Alert
+        mb="5"
+        status="warning"
+      >
+        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
+        vote period using this method, the vote will be discarded.
+      </Alert>
     </>
   );
 };
