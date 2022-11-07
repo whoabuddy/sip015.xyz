@@ -2,6 +2,7 @@ import {
   Alert,
   AlertIcon,
   Box,
+  Button,
   Center,
   Container,
   Divider,
@@ -15,7 +16,7 @@ import {
   UnorderedList,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { ExternalLinkIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
 import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
 
@@ -108,7 +109,20 @@ const AboutSection = () => {
 const VoteSection = () => {
   return (
     <Box p="10">
-      <Heading pb="5">How to Vote</Heading>
+      <Heading pb="5">
+        How to Vote{' '}
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          title="Stacks 2.1: Your Guide to Voting"
+          href="https://stacks.org/21-voting-guide"
+          isExternal
+        >
+          <QuestionOutlineIcon
+            boxSize={8}
+            mx="2px"
+          />
+        </Link>
+      </Heading>
       <Text pb="5">
         If a user is Stacking, then their STX can be used to vote through Method 1 if Stacking solo
         or Method 2 if Stacking in a pool.
