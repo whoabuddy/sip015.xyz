@@ -19,6 +19,7 @@ import {
 import { ExternalLinkIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
 import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
+import { WalletConnectButton } from './wallet-connect-button';
 
 export const PageBody = () => {
   return (
@@ -125,7 +126,9 @@ const VoteSection = () => {
       </Heading>
       <Text pb="5">
         If a user is Stacking, then their STX can be used to vote through Method 1 if Stacking solo
-        or Method 2 if Stacking in a pool.
+        or Method 2 if Stacking in a pool. For stacker voting, those who are Stacking either on
+        their own or through a community delegate/pool through cycles 46 and 47, are eligible to
+        vote.
       </Text>
       <Text pb="5">
         If a user is Stacking through an exchange or not Stacking at all, then their STX can be used
@@ -308,7 +311,7 @@ const VoteMethodThree = () => {
           href="https://stx.eco/sip/twopointone"
           isExternal
         >
-          the Ecosystem DAO website
+          the Ecosystem DAO website <ExternalLinkIcon />
         </Link>{' '}
         and vote through the DAO proposal.
       </Text>

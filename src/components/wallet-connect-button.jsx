@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress } from '@micro-stacks/react';
 
-export const WalletConnectButton = () => {
+export const WalletConnectButton = props => {
   const { openAuthRequest, isRequestPending, signOut, isSignedIn } = useAuth();
   const address = useCurrentStxAddress();
   const label = isRequestPending
@@ -11,6 +11,8 @@ export const WalletConnectButton = () => {
     : 'Login to Vote';
   return (
     <Button
+      {...props}
+      title={isSignedIn ? 'Sign Out' : 'Login with a Stacks Wallet to Vote'}
       fontSize="sm"
       onClick={() => {
         isSignedIn ? void signOut() : void openAuthRequest();
