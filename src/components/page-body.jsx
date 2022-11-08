@@ -2,7 +2,6 @@ import {
   Alert,
   AlertIcon,
   Box,
-  Button,
   Center,
   Container,
   Divider,
@@ -125,7 +124,9 @@ const VoteSection = () => {
       </Heading>
       <Text pb="5">
         If a user is Stacking, then their STX can be used to vote through Method 1 if Stacking solo
-        or Method 2 if Stacking in a pool.
+        or Method 2 if Stacking in a pool. For stacker voting, those who are Stacking either on
+        their own or through a community delegate/pool through cycles 46 and 47, are eligible to
+        vote.
       </Text>
       <Text pb="5">
         If a user is Stacking through an exchange or not Stacking at all, then their STX can be used
@@ -302,15 +303,14 @@ const VoteMethodThree = () => {
       </Stack>
 
       <Text pb="5">
-        To vote, you'll need to access{' '}
+        To vote, you'll need to access the Ecosystem DAO website and{' '}
         <Link
           color={useColorModeValue('blue.600', 'blue.200')}
           href="https://stx.eco/sip/twopointone"
           isExternal
         >
-          the Ecosystem DAO website
-        </Link>{' '}
-        and vote through the DAO proposal.
+          vote through the DAO proposal.
+        </Link>
       </Text>
     </>
   );

@@ -1,6 +1,7 @@
 import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
+import { WalletConnectButton } from './wallet-connect-button';
 
 export const VoteButtons = () => {
   const { isSignedIn } = useAuth();
@@ -14,7 +15,7 @@ export const VoteButtons = () => {
     await openStxTokenTransfer({
       recipient: 'SP00000000000003SCNSJTCHE66N2PXHX',
       amount: 1,
-      memo: 'SIP-015: Yes',
+      memo: 'Yes on 2.1',
       onFinish: tx => voteFinished(tx),
     });
   };
@@ -23,7 +24,7 @@ export const VoteButtons = () => {
     await openStxTokenTransfer({
       recipient: 'SP00000000000000DSQJTCHE66XE1NHQ',
       amount: 1,
-      memo: 'SIP-015: No',
+      memo: 'No on 2.1',
       onFinish: tx => voteFinished(tx),
     });
   };
@@ -34,7 +35,13 @@ export const VoteButtons = () => {
     setVoteTxid(tx.txId);
   };
 
-  if (!isSignedIn) return null;
+  if (!isSignedIn)
+    return (
+      <WalletConnectButton
+        mb="5"
+        colorScheme="blue"
+      />
+    );
 
   return (
     <Box
