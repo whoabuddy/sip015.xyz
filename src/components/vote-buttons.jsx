@@ -1,4 +1,4 @@
-import { Box, Button, Center, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
 import { WalletConnectButton } from './wallet-connect-button';

@@ -2,7 +2,6 @@ import {
   Alert,
   AlertIcon,
   Box,
-  Button,
   Center,
   Container,
   Divider,
@@ -19,7 +18,6 @@ import {
 import { ExternalLinkIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
 import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
-import { WalletConnectButton } from './wallet-connect-button';
 
 export const PageBody = () => {
   return (
