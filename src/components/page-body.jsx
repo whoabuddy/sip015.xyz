@@ -305,15 +305,14 @@ const VoteMethodThree = () => {
       </Stack>
 
       <Text pb="5">
-        To vote, you'll need to access{' '}
+        To vote, you'll need to access the Ecosystem DAO website and{' '}
         <Link
           color={useColorModeValue('blue.600', 'blue.200')}
           href="https://stx.eco/sip/twopointone"
           isExternal
         >
-          the Ecosystem DAO website <ExternalLinkIcon />
-        </Link>{' '}
-        and vote through the DAO proposal.
+          vote through the DAO proposal.
+        </Link>
       </Text>
     </>
   );
