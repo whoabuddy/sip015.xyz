@@ -15,7 +15,7 @@ export const VoteButtons = () => {
     await openStxTokenTransfer({
       recipient: 'SP00000000000003SCNSJTCHE66N2PXHX',
       amount: 1,
-      memo: 'SIP-015: Yes',
+      memo: 'Yes on 2.1',
       onFinish: tx => voteFinished(tx),
     });
   };
@@ -24,7 +24,7 @@ export const VoteButtons = () => {
     await openStxTokenTransfer({
       recipient: 'SP00000000000000DSQJTCHE66XE1NHQ',
       amount: 1,
-      memo: 'SIP-015: No',
+      memo: 'No on 2.1',
       onFinish: tx => voteFinished(tx),
     });
   };
