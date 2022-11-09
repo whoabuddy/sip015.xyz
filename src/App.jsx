@@ -1,5 +1,5 @@
 import * as MicroStacks from '@micro-stacks/react';
-import { ChakraProvider, useToast } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { PageHeader } from './components/page-header';
 import { PageBody } from './components/page-body';
 import { PageFooter } from './components/page-footer';

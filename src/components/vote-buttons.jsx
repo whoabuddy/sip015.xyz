@@ -2,12 +2,14 @@ import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/re
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
 import { useBnsName } from '../hooks/bns-name';
+import { useVoteStatus } from '../hooks/vote-status';
 import { WalletConnectButton } from './wallet-connect-button';
 
 export const VoteButtons = () => {
   const { isSignedIn } = useAuth();
   const address = useCurrentStxAddress();
   const bnsName = useBnsName(address);
+  const alreadyVoted = useVoteStatus(address);
   const { openStxTokenTransfer, isRequestPending } = useOpenStxTokenTransfer();
   const [voted, setVoted] = useState(false);
   const [voteMsg, setVoteMsg] = useState('');
@@ -81,6 +83,7 @@ export const VoteButtons = () => {
             <Button
               mx="5"
               colorScheme="green"
+              isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteYes}
             >
@@ -89,6 +92,7 @@ export const VoteButtons = () => {
             <Button
               mx="5"
               colorScheme="red"
+              isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteNo}
             >
