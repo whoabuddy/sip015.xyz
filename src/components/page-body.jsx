@@ -6,6 +6,7 @@ import {
   Container,
   Divider,
   Heading,
+  IconButton,
   Link,
   ListItem,
   OrderedList,
@@ -14,8 +15,10 @@ import {
   Text,
   UnorderedList,
   useColorModeValue,
+  useToast,
 } from '@chakra-ui/react';
-import { ExternalLinkIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
+import copy from 'copy-to-clipboard';
+import { CopyIcon, ExternalLinkIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
 import { VoteButtons } from './vote-buttons';
 import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
 
@@ -158,6 +161,30 @@ const VoteSection = () => {
 };
 
 const VoteMethodOne = () => {
+  const btcYes = '11111111111111X6zHB1ZC2FmtnqJ';
+  const btcNo = '1111111111111117CrbcZgemVNFx8';
+
+  const toast = useToast();
+
+  const copyText = text => {
+    const copyStatus = copy(text);
+    if (copyStatus) {
+      toast({
+        title: `Copied ${text} to clipboard`,
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: `Unable to copy to clipboard`,
+        status: 'error',
+        duration: 2000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <>
       <Stack
@@ -191,9 +218,17 @@ const VoteMethodOne = () => {
             href="https://mempool.space/address/11111111111111X6zHB1ZC2FmtnqJ"
             isExternal
           >
-            11111111111111X6zHB1ZC2FmtnqJ
+            {btcYes}
           </Link>
-          .
+          <IconButton
+            aria-label="Copy to clipboard"
+            title={`Copy ${btcYes} to clipboard`}
+            ms="2"
+            icon={<CopyIcon />}
+            onClick={() => {
+              copyText(btcYes);
+            }}
+          />
         </ListItem>
         <ListItem>
           <Text as="b">To vote No on 2.1</Text>, send a{' '}
@@ -210,9 +245,17 @@ const VoteMethodOne = () => {
             href="https://mempool.space/address/1111111111111117CrbcZgemVNFx8"
             isExternal
           >
-            1111111111111117CrbcZgemVNFx8
+            {btcNo}
           </Link>
-          .
+          <IconButton
+            aria-label="Copy to clipboard"
+            title={`Copy ${btcNo} to clipboard`}
+            ms="2"
+            icon={<CopyIcon />}
+            onClick={() => {
+              copyText(btcNo);
+            }}
+          />
         </ListItem>
       </UnorderedList>
       <Alert
@@ -227,6 +270,30 @@ const VoteMethodOne = () => {
 };
 
 const VoteMethodTwo = () => {
+  const stxYes = 'SP00000000000003SCNSJTCHE66N2PXHX';
+  const stxNo = 'SP00000000000000DSQJTCHE66XE1NHQ';
+
+  const toast = useToast();
+
+  const copyText = text => {
+    const copyStatus = copy(text);
+    if (copyStatus) {
+      toast({
+        title: `Copied ${text} to clipboard`,
+        status: 'success',
+        duration: 1000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: `Unable to copy to clipboard`,
+        status: 'error',
+        duration: 1000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <>
       <Stack
@@ -253,9 +320,17 @@ const VoteMethodTwo = () => {
             href="https://explorer.stacks.co/address/SP00000000000003SCNSJTCHE66N2PXHX"
             isExternal
           >
-            SP00000000000003SCNSJTCHE66N2PXHX
+            {stxYes}
           </Link>
-          .
+          <IconButton
+            aria-label="Copy to clipboard"
+            title={`Copy ${stxYes} to clipboard`}
+            ms="2"
+            icon={<CopyIcon />}
+            onClick={() => {
+              copyText(stxYes);
+            }}
+          />
         </ListItem>
         <ListItem>
           <Text as="b">To vote No on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
@@ -265,9 +340,17 @@ const VoteMethodTwo = () => {
             href="https://explorer.stacks.co/address/SP00000000000000DSQJTCHE66XE1NHQ"
             isExternal
           >
-            SP00000000000000DSQJTCHE66XE1NHQ
+            {stxNo}
           </Link>
-          .
+          <IconButton
+            aria-label="Copy to clipboard"
+            title={`Copy ${stxNo} to clipboard`}
+            ms="2"
+            icon={<CopyIcon />}
+            onClick={() => {
+              copyText(stxNo);
+            }}
+          />
         </ListItem>
       </UnorderedList>
       <VoteButtons />
