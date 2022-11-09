@@ -1,11 +1,15 @@
 import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
+import { useBnsName } from '../hooks/bns-name';
+import { useVoteStatus } from '../hooks/vote-status';
 import { WalletConnectButton } from './wallet-connect-button';
 
 export const VoteButtons = () => {
   const { isSignedIn } = useAuth();
   const address = useCurrentStxAddress();
+  const bnsName = useBnsName(address);
+  const alreadyVoted = useVoteStatus(address);
   const { openStxTokenTransfer, isRequestPending } = useOpenStxTokenTransfer();
   const [voted, setVoted] = useState(false);
   const [voteMsg, setVoteMsg] = useState('');
@@ -51,7 +55,7 @@ export const VoteButtons = () => {
       mb="5"
     >
       <Stack
-        direction={['column', 'row']}
+        direction={['column', 'column', 'row']}
         justifyContent="space-evenly"
       >
         <Text
@@ -60,6 +64,7 @@ export const VoteButtons = () => {
           alignSelf="center"
         >
           Logged in as {`${address.substring(0, 5)}...${address.substring(address.length - 5)}`}
+          {bnsName ? ` (${bnsName})` : ''}
         </Text>
 
         {voted ? (
@@ -78,6 +83,7 @@ export const VoteButtons = () => {
             <Button
               mx="5"
               colorScheme="green"
+              isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteYes}
             >
@@ -86,6 +92,7 @@ export const VoteButtons = () => {
             <Button
               mx="5"
               colorScheme="red"
+              isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteNo}
             >

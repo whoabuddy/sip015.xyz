@@ -4,6 +4,7 @@ import { useAuth, useCurrentStxAddress } from '@micro-stacks/react';
 export const WalletConnectButton = props => {
   const { openAuthRequest, isRequestPending, signOut, isSignedIn } = useAuth();
   const address = useCurrentStxAddress();
+
   const label = isRequestPending
     ? 'Loading...'
     : isSignedIn
