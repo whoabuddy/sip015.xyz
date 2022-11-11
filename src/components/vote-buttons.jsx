@@ -82,7 +82,7 @@ export const VoteButtons = () => {
           <>
             <Button
               mx="5"
-              colorScheme="green"
+              colorScheme={alreadyVoted ? 'gray' : 'green'}
               isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteYes}
@@ -91,7 +91,7 @@ export const VoteButtons = () => {
             </Button>
             <Button
               mx="5"
-              colorScheme="red"
+              colorScheme={alreadyVoted ? 'gray' : 'red'}
               isDisabled={alreadyVoted}
               isLoading={isRequestPending ? true : false}
               onClick={voteNo}
