@@ -5,6 +5,7 @@ export const useVoteStatus = address => {
   const [voted, setVoted] = useState(false);
   const stxYes = 'SP00000000000003SCNSJTCHE66N2PXHX';
   const stxNo = 'SP00000000000000DSQJTCHE66XE1NHQ';
+  const voteStartHeight = 82914;
 
   useEffect(() => {
     let voteStatusResolved = true;
@@ -18,7 +19,11 @@ export const useVoteStatus = address => {
         });
         if (response && voteStatusResolved) {
           for (const result of response.results) {
-            if (result.tx_status === 'success' && result.tx_type === 'token_transfer') {
+            if (
+              result.tx_status === 'success' &&
+              result.tx_type === 'token_transfer' &&
+              result.block_height >= voteStartHeight
+            ) {
               if (
                 result.token_transfer.recipient_address === stxYes ||
                 result.token_transfer.recipient_address === stxNo
