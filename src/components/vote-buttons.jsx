@@ -98,6 +98,14 @@ export const VoteButtons = () => {
             >
               NO ON 2.1
             </Button>
+            {alreadyVoted && (
+              <Text
+                as="i"
+                alignSelf="center"
+              >
+                Already voted
+              </Text>
+            )}
           </>
         )}
       </Stack>
