@@ -110,8 +110,8 @@ const VoteMethodOne = () => {
         />
       </Stack>
       <Text pb="5">
-        To vote, you'll need to send a Bitcoin transaction using the key(s) to your PoX reward
-        address.
+        To vote, you'll need to send a Bitcoin transaction to one of the addresses below (depending
+        on your vote). The transaction must come from your PoX reward address.
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
@@ -174,8 +174,8 @@ const VoteMethodOne = () => {
         mb="5"
         status="warning"
       >
-        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
-        vote period using this method, the vote will be discarded.
+        <AlertIcon /> If a PoX reward address votes for both "yes" and "no" by the end of the vote
+        period using this method, the vote will be discarded.
       </Alert>
     </>
   );
@@ -221,7 +221,8 @@ const VoteMethodTwo = () => {
       </Stack>
 
       <Text pb="5">
-        To vote, you'll need to send a Stacks transaction using the key(s) to your Stacking address.
+        To vote, you'll need to send a Stacks transaction to one of the addresses below (depending
+        on your vote). The transaction must come from your Stacking address participating in a pool.
       </Text>
       <UnorderedList pb="5">
         <ListItem pb="5">
@@ -299,7 +300,7 @@ const VoteMethodThree = () => {
       </Stack>
 
       <Text pb="5">
-        To vote, you'll need to access the Ecosystem DAO website and{' '}
+        To vote with unlocked STX, you'll need to access the Ecosystem DAO website and{' '}
         <Link
           color={useColorModeValue('blue.600', 'blue.200')}
           href="https://stx.eco/sip/twopointone"
