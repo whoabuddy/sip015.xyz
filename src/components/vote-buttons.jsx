@@ -2,6 +2,7 @@ import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/re
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
 import { useBnsName } from '../hooks/bns-name';
+import { useStackingStatus } from '../hooks/stacking-status';
 import { useVoteStatus } from '../hooks/vote-status';
 import { WalletConnectButton } from './wallet-connect-button';
 
@@ -10,6 +11,7 @@ export const VoteButtons = () => {
   const address = useCurrentStxAddress();
   const bnsName = useBnsName(address);
   const alreadyVoted = useVoteStatus(address);
+  const [stackingStatus, stackingData] = useStackingStatus(address);
   const { openStxTokenTransfer, isRequestPending } = useOpenStxTokenTransfer();
   const [voted, setVoted] = useState(false);
   const [voteMsg, setVoteMsg] = useState('');
@@ -109,6 +111,8 @@ export const VoteButtons = () => {
           </>
         )}
       </Stack>
+      <Text>Stacking status: {stackingStatus.toString()}</Text>
+      {stackingStatus && <Text>Stacking data: {JSON.stringify(stackingData)}</Text>}
     </Box>
   );
 };

@@ -1,3 +1,5 @@
+import { StacksMainnet } from 'micro-stacks/network';
+
 // fetch and return JSON from URL
 export const fetchJson = async url => {
   const response = await fetch(url);
@@ -7,3 +9,7 @@ export const fetchJson = async url => {
   }
   throw new Error(`fetchJson: ${url} ${response.status} ${response.statusText}`);
 };
+
+// stacks configurations
+export const STXAPI = 'https://stacks-node-api.mainnet.stacks.co';
+export const STXMAINNET = new StacksMainnet();
