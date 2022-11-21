@@ -20,7 +20,8 @@ export const AboutSection = () => {
     >
       <Heading pb="5">About SIP-015</Heading>
       <Text pb="5">
-        This SIP proposes a set of updates to three major areas of the Stacks blockchain:
+        SIP-015 (aka "Stacks 2.1") proposes a set of updates to three major areas of the Stacks
+        blockchain:
       </Text>
       <OrderedList pb="5">
         <ListItem>
@@ -44,8 +45,12 @@ export const AboutSection = () => {
           acceptable to the Stacks blockchain.
         </ListItem>
       </OrderedList>
+      <Text pb="5">
+        In addition, SIP-020 adds 6 new native functions to perform bitwise operations in Clarity
+        code, and will be activated if the SIP-015 vote passes.
+      </Text>
       <Stack
-        direction={['column', null, 'row']}
+        direction={['column', null, null, 'row']}
         justifyContent="space-evenly"
         divider={<StackDivider borderColor={useColorModeValue('gray.300', 'gray.500')} />}
       >
@@ -56,6 +61,14 @@ export const AboutSection = () => {
           isExternal
         >
           SIP-015 on GitHub <ExternalLinkIcon mx="2px" />
+        </Link>
+        <Link
+          color={useColorModeValue('blue.600', 'blue.200')}
+          fontSize="1.25em"
+          href="https://github.com/obycode/sips/blob/bitwise-ops/sips/sip-020/sip-020-bitwise-ops.md"
+          isExternal
+        >
+          SIP-020 on GitHub <ExternalLinkIcon mx="2px" />
         </Link>
         <Link
           color={useColorModeValue('blue.600', 'blue.200')}
