@@ -1,9 +1,21 @@
-import { Box, Button, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  AlertTitle,
+  Box,
+  Button,
+  Link,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { useAuth, useCurrentStxAddress, useOpenStxTokenTransfer } from '@micro-stacks/react';
 import { useState } from 'react';
 import { useBnsName } from '../hooks/bns-name';
 import { useStackingStatus } from '../hooks/stacking-status';
 import { useVoteStatus } from '../hooks/vote-status';
+import { fromMicroStx } from '../lib/utils';
 import { WalletConnectButton } from './wallet-connect-button';
 
 export const VoteButtons = () => {
@@ -59,6 +71,7 @@ export const VoteButtons = () => {
       <Stack
         direction={['column', 'column', 'row']}
         justifyContent="space-evenly"
+        mb="5"
       >
         <Text
           as="b"
@@ -111,8 +124,44 @@ export const VoteButtons = () => {
           </>
         )}
       </Stack>
-      <Text>Stacking status: {stackingStatus.toString()}</Text>
-      {stackingStatus && <Text>Stacking data: {JSON.stringify(stackingData)}</Text>}
+
+      {stackingStatus ? (
+        <Alert
+          status="success"
+          variant="subtle"
+          flexDirection={['column', null, 'row']}
+          justifyContent="center"
+          alignContent="center"
+        >
+          <AlertIcon /> <AlertTitle>Stacking detected!</AlertTitle>
+          <AlertDescription>
+            <Stack
+              direction={['column', null, 'row']}
+              justifyContent="space-evenly"
+              mt={['5', null, '0']}
+            >
+              <Text>Amount: {fromMicroStx(stackingData['amount-ustx'], true)} STX</Text>
+              <Text>First cycle: {stackingData['first-reward-cycle']}</Text>
+              <Text>Lock period: {stackingData['lock-period']}</Text>
+            </Stack>
+          </AlertDescription>
+        </Alert>
+      ) : (
+        <Alert
+          status="warning"
+          variant="solid"
+        >
+          <AlertIcon /> <AlertTitle>Stacking data not detected.</AlertTitle>
+          <AlertDescription>
+            Reminder: the address you're voting from must be Stacking over cycle 46 & 47 otherwise
+            it won't be counted. If not, please use Method 3 to vote.
+          </AlertDescription>
+        </Alert>
+      )}
     </Box>
   );
 };
+
+/*
+
+*/

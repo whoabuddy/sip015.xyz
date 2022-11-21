@@ -25,7 +25,7 @@ export const useStackingStatus = address => {
           },
           true
         );
-        console.log(`stackingResponse: ${JSON.stringify(stackingResponse, null, 2)}`);
+        // console.log(`stackingResponse: ${JSON.stringify(stackingResponse, null, 2)}`);
         if (stackingResponse && stackingStatusResolved) {
           setStackingStatus(true);
           setStackingData(stackingResponse);
