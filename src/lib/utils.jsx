@@ -4,11 +4,6 @@ import { StacksMainnet } from 'micro-stacks/network';
 export const fetchJson = async url => {
   const response = await fetch(url);
   if (response.status === 200) {
-    console.log(`url: ${url}`);
-    console.log(`headers:`);
-    for (const header of response.headers) {
-      console.log(`  ${header[0]}: ${header[1]}`);
-    }
     const json = await response.json();
     return json;
   }
@@ -32,4 +27,4 @@ export const ADDRESS_BTC_YES = '11111111111111X6zHB1ZC2FmtnqJ';
 export const ADDRESS_BTC_NO = '1111111111111117CrbcZgemVNFx8';
 
 // tx indexer
-export const STX_INDEXER = 'https://sip015-indexer.chaos.workers.dev';
+export const STX_INDEXER = 'https://indexer.sip015.xyz';
