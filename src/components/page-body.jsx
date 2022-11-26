@@ -1,5 +1,6 @@
 import { Center, Container, Heading } from '@chakra-ui/react';
 import { AboutSection } from './about-section';
+import { VoteResults } from './vote-results';
 import { VoteSection } from './vote-section';
 
 export const PageBody = () => {
@@ -14,6 +15,7 @@ export const PageBody = () => {
         </Heading>
       </Center>
       <AboutSection />
+      <VoteResults />
       <VoteSection />
     </Container>
   );
