@@ -4,19 +4,12 @@ import {
   Box,
   Divider,
   Heading,
-  IconButton,
   Link,
-  ListItem,
   Stack,
   Text,
-  UnorderedList,
   useColorModeValue,
-  useToast,
 } from '@chakra-ui/react';
-import copy from 'copy-to-clipboard';
-import { CopyIcon, QuestionOutlineIcon } from '@chakra-ui/icons';
-import { VoteButtons } from './vote-buttons';
-import { ClaimBadge } from './claim-badge';
+import { QuestionOutlineIcon } from '@chakra-ui/icons';
 import { Bitcoin, bitcoinColor, Stacks, stacksColor } from './logos';
 
 export const VoteSection = () => {
@@ -72,30 +65,6 @@ export const VoteSection = () => {
 };
 
 const VoteMethodOne = () => {
-  const btcYes = '11111111111111X6zHB1ZC2FmtnqJ';
-  const btcNo = '1111111111111117CrbcZgemVNFx8';
-
-  const toast = useToast();
-
-  const copyText = text => {
-    const copyStatus = copy(text);
-    if (copyStatus) {
-      toast({
-        title: `Copied ${text} to clipboard`,
-        status: 'success',
-        duration: 2000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: `Unable to copy to clipboard`,
-        status: 'error',
-        duration: 2000,
-        isClosable: true,
-      });
-    }
-  };
-
   return (
     <>
       <Stack
@@ -109,103 +78,12 @@ const VoteMethodOne = () => {
           ms="2px"
         />
       </Stack>
-      <Text pb="5">
-        To vote, you'll need to send a Bitcoin transaction to one of the addresses below (depending
-        on your vote). The transaction must come from your PoX reward address.
-      </Text>
-      <UnorderedList pb="5">
-        <ListItem pb="5">
-          <Text as="b">To vote Yes on 2.1</Text>, send a{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
-            isExternal
-          >
-            dust amount
-          </Link>{' '}
-          (around 6,000 sats) of BTC to{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://mempool.space/address/11111111111111X6zHB1ZC2FmtnqJ"
-            isExternal
-          >
-            {btcYes}
-          </Link>
-          <IconButton
-            aria-label="Copy to clipboard"
-            title={`Copy ${btcYes} to clipboard`}
-            ms="2"
-            icon={<CopyIcon />}
-            onClick={() => {
-              copyText(btcYes);
-            }}
-          />
-        </ListItem>
-        <ListItem>
-          <Text as="b">To vote No on 2.1</Text>, send a{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://github.com/bitcoin/bitcoin/blob/6d8543504d8c5bde1d12a3c60407dee44d2c8e11/src/policy/policy.cpp#L16-L29"
-            isExternal
-          >
-            dust amount
-          </Link>{' '}
-          (around 6,000 sats) of BTC to{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://mempool.space/address/1111111111111117CrbcZgemVNFx8"
-            isExternal
-          >
-            {btcNo}
-          </Link>
-          <IconButton
-            aria-label="Copy to clipboard"
-            title={`Copy ${btcNo} to clipboard`}
-            ms="2"
-            icon={<CopyIcon />}
-            onClick={() => {
-              copyText(btcNo);
-            }}
-          />
-        </ListItem>
-      </UnorderedList>
-      <ClaimBadge />
-      <Alert
-        mb="5"
-        status="warning"
-      >
-        <AlertIcon /> If a PoX reward address votes for both "yes" and "no" by the end of the vote
-        period using this method, the vote will be discarded.
-      </Alert>
+      <Text pb="5">Vote closed - results coming soon!</Text>
     </>
   );
 };
 
 const VoteMethodTwo = () => {
-  const stxYes = 'SP00000000000003SCNSJTCHE66N2PXHX';
-  const stxNo = 'SP00000000000000DSQJTCHE66XE1NHQ';
-
-  const toast = useToast();
-
-  const copyText = text => {
-    const copyStatus = copy(text);
-    if (copyStatus) {
-      toast({
-        title: `Copied ${text} to clipboard`,
-        status: 'success',
-        duration: 1000,
-        isClosable: true,
-      });
-    } else {
-      toast({
-        title: `Unable to copy to clipboard`,
-        status: 'error',
-        duration: 1000,
-        isClosable: true,
-      });
-    }
-  };
-
   return (
     <>
       <Stack
@@ -220,61 +98,7 @@ const VoteMethodTwo = () => {
         />
       </Stack>
 
-      <Text pb="5">
-        To vote, you'll need to send a Stacks transaction to one of the addresses below (depending
-        on your vote). The transaction must come from your Stacking address participating in a pool.
-      </Text>
-      <UnorderedList pb="5">
-        <ListItem pb="5">
-          <Text as="b">To vote Yes on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
-          STX to{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://explorer.stacks.co/address/SP00000000000003SCNSJTCHE66N2PXHX"
-            isExternal
-          >
-            {stxYes}
-          </Link>
-          <IconButton
-            aria-label="Copy to clipboard"
-            title={`Copy ${stxYes} to clipboard`}
-            ms="2"
-            icon={<CopyIcon />}
-            onClick={() => {
-              copyText(stxYes);
-            }}
-          />
-        </ListItem>
-        <ListItem>
-          <Text as="b">To vote No on 2.1</Text>, send a minimal amount (0.000001 STX or 1 uSTX) of
-          STX to{' '}
-          <Link
-            color={useColorModeValue('blue.600', 'blue.200')}
-            href="https://explorer.stacks.co/address/SP00000000000000DSQJTCHE66XE1NHQ"
-            isExternal
-          >
-            {stxNo}
-          </Link>
-          <IconButton
-            aria-label="Copy to clipboard"
-            title={`Copy ${stxNo} to clipboard`}
-            ms="2"
-            icon={<CopyIcon />}
-            onClick={() => {
-              copyText(stxNo);
-            }}
-          />
-        </ListItem>
-      </UnorderedList>
-      <VoteButtons />
-      <ClaimBadge />
-      <Alert
-        mb="5"
-        status="warning"
-      >
-        <AlertIcon /> If the Stacks address holder votes for both "yes" and "no" by the end of the
-        vote period using this method, the vote will be discarded.
-      </Alert>
+      <Text pb="5">Vote closed - results coming soon!</Text>
     </>
   );
 };
